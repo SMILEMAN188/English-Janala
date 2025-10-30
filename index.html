@@ -42,8 +42,8 @@
 
 </head>
 <body>
-                                                                <!-- Navbar -->
-    <nav class="flex flex-row place-content-between py-2 items-center gap-2 px-20 border-b mb-16 bg-linear-to-t from-[#2a2a2a28] to-[#ffffff2b] rounded-lg">
+                                                                           <!-- Navbar -->
+    <nav id="nav" class="flex flex-row justify-between py-2 items-center gap-2 px-20 border-b mb-16  rounded-lg">
         <div class="flex flex-row items-center">
             <p class="font-semibold text-xl">English</p>
             <img class="py-4" src="assets/logo.png" alt="">
@@ -56,23 +56,24 @@
             <button class="btn btn-outline btn-primary"> <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
         </div>
     </nav>
-                                                           <!-- Banner and login -->
-    <section class="flex flex-row justify-center items-center px-24 mb-24">
+                                                                      <!-- Banner and login -->
+    <section id="Banner" class="flex flex-row justify-center items-center px-24 mb-24">
         <div class="flex flex-col gap-6">
             <p class="font-bold text-4xl"><span class="text-[#00BCFF]">English</span> is Easy!!</p>
             <p class="font-medium text-2xl text-[#18181B] hind-siliguri-light whitespace-pre-line">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br>যাবে অন্য একটি Level এ</p>
             <input type="text" class="input" placeholder="Enter Your Name" required />
-            <input type="password" class="input" placeholder="1234" required/>
+            <input id="password" type="password" class="input" placeholder="Enter password (1234)" required/>
             <div>
-                <button class="btn btn-soft btn-primary">Get Started</button>
+                <button id="get-started-btn" class="btn btn-soft btn-primary">Get Started</button>
             </div>
         </div>
         <div>
             <img src="assets/hero-student.png" alt="">
         </div>
     </section>
-                                                            <!-- Vocabularies select -->
-    <section class="flex flex-col justify-center items-center">
+                                                                      <!-- Vocabularies select -->
+    <section id="vocabulary">
+        <section  class="flex flex-col justify-center items-center">
         <p class="font-bold text-4xl text-[#18181B] pb-7"><span class="text-[#00BCFF]" >Let's</span> Learn Vocabularies</p>
         <div class="flex  flex-row gap-3 pb-24">
             <button class="btn btn-outline btn-primary">Lesson -1</button>
@@ -83,13 +84,16 @@
             <button class="btn btn-outline btn-primary">Lesson -6</button>
             <button class="btn btn-outline btn-primary">Lesson -7</button>
         </div>
-        <div class="flex flex-col justify-center items-center bg-[#F8F8F8] ">
+    </section>
+    <section class="mx-20 flex flex-col">
+        <div class="flex flex-col justify-center items-center bg-[#F8F8F8] py-16 rounded-lg">
             <p class="text-[#79716B] text-sm hind-siliguri-light pb-3">আপনি এখনো কোন Lesson Select করেন নি</p>
             <p class="hind-siliguri-light text-[#292524] font-medium text-4xl">একটি Lesson Select করুন।</p>
         </div>
     </section>
-                                                                  <!-- FAQ -->
-    <section class="flex flex-col justify-center items-center gap-3 px-20 py-48">
+    </section>
+                                                                              <!-- FAQ -->
+    <section id="FAQ" class="flex flex-col justify-center items-center gap-3 px-20 py-48">
         <p class="text-4xl font-bold text-[#18181B] pb-20"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</p>
             <div class="collapse collapse-plus bg-base-100    border border-base-300">
                 <input type="radio" name="my-accordion-3" checked="checked" />
@@ -121,7 +125,7 @@
                 <div class="collapse-content text-sm">Right now we cannot provide that, but infuture we can offer certificates after complete the courses.</div>
             </div>
     </section>
-
+                                                                             <!-- Footer -->
     <footer class="flex flex-col px-20 mb-16 ">
 
         <div class="flex flex-row ">
@@ -144,7 +148,6 @@
             </div>
         </div>
     </footer>
-
-
+   <script src="scripts/script.js"></script>
 </body>
 </html> 
