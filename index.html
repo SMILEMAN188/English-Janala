@@ -25,6 +25,7 @@
     <style>
         *{
             font-family: "Poppins", sans-serif;
+            scroll-behavior: smooth;
         }
 
         .tiro-bangla-regular{
@@ -52,9 +53,13 @@
         </div>
 
         <div class="flex flex-row gap-4">
-            <button class="btn btn-outline btn-primary"> <i class="fa-regular fa-circle-question"></i> FAQ</button>
-            <button class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Learn</button>
-            <button class="btn btn-outline btn-primary"> <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+            <a href="#FAQ">
+                <button class="btn btn-outline btn-primary"> <i class="fa-regular fa-circle-question"></i> FAQ</button>
+            </a>
+            <a href="#vocabulary">
+                <button class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Learn</button>
+            </a>
+            <button onclick="logOut()" class="btn btn-outline btn-primary"> <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
         </div>
         </section>
     </nav>
@@ -90,42 +95,42 @@
     </section>
     </section>
                                                                               <!-- FAQ -->
-    <section id="FAQ" class="flex flex-col justify-center items-center px-20 py-48">
+    <section id="FAQ" class="flex flex-col justify-center items-center px-20 py-48 gap-2">
         <div class="text-center">
             <p class="text-4xl font-bold text-[#18181B] pb-20"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</p>
         </div>
-        <div class="collapse collapse-plus bg-base-100    border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">1.How can I start learning English on this website?</div>
             <div class="collapse-content text-sm">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</div>
         </div>
             
-        <div class="collapse collapse-plus bg-base-100    border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">2.Is this website free to use?</div>
             <div class="collapse-content text-sm">Yeap! This website is totally free for learning.</div>
         </div>
             
-        <div class="collapse collapse-plus bg-base-100   border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm border border-base-300">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">3.Do I need to create an account?</div>
             <div class="collapse-content text-sm">Yes.You need to create an account ,when you are login first time.</div>
         </div>
 
-        <div class="collapse collapse-plus bg-base-100    border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
             <div class="collapse-content text-sm">You should learn and explore new words daily.</div>
         </div>
 
-        <div class="collapse collapse-plus bg-base-100    border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
             <div class="collapse-content text-sm">Right now we cannot provide that, but infuture we can offer certificates after complete the courses.</div>
         </div>
     </section>
                                                                              <!-- Footer -->
-    <footer class="flex flex-col px-20 mb-16 ">
+    <footer class="flex flex-col px-20 mt-20 mb-16 ">
 
         <div class="flex flex-row ">
             <p class="flex flex-row justify-center items-center text-xl pb-7">English <img src="assets/logo.png" alt="logo"> <span class="tiro-bangla-regular">জানালা</span></p>
