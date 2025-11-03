@@ -67,7 +67,7 @@
     <section id="Banner" class="flex flex-row justify-center items-center px-24 mb-24">
         <div class="flex flex-col gap-6">
             <p class="font-bold text-4xl"><span class="text-[#00BCFF]">English</span> is Easy!!</p>
-            <p class="font-medium text-2xl text-[#18181B] hind-siliguri-light whitespace-pre-line">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br>যাবে অন্য একটি Level এ</p>
+            <p class="font-medium text-2xl text-[#18181B] hind-siliguri-light whitespace-pre-line">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা <br>বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br>যাবে অন্য একটি Level এ</p>
             <input type="text" class="input" placeholder="Enter Your Name" required />
             <input id="password" type="password" class="input" placeholder="Enter password (1234)" required/>
             <div>
@@ -80,15 +80,28 @@
     </section>
                                                                       <!-- Vocabularies select -->
     <section id="vocabulary">
+        
         <section  class="flex flex-col justify-center items-center">
-        <p class="font-bold text-4xl text-[#18181B] pb-7"><span class="text-[#00BCFF]" >Let's</span> Learn Vocabularies</p>
+            <p class="font-bold text-4xl text-[#18181B] pb-7"><span class="text-[#00BCFF]" >Let's</span> Learn Vocabularies</p>
+            <div id="level-container" class="flex  flex-row gap-3 pb-24">
+            </div>
+        </section>
+                                                                           <!-- words -->
+        <section class="grid grid-rows-3 items-center justify-center mx-20 bg-[#F8F8F8] py-16 rounded-lg gap-8 ">
+            <section class="  ">
+                <div class="flex flex-col items-center justify-center bg-white rounded-lg py-14 px-14">
+                    <p class="text-3xl font-bold pb-6">Eager</p>
+                    <p class="font-medium text-xl pb-6">Meaning /Pronounciation</p>
+                    <p class="text-[#18181B] text-3xl font-semibold">"আগ্রহী / ইগার"</p>
+                    <div class="flex flex-row items-center justify-between mt-auto">
+                    <i class="fa-solid fa-circle-info bg-[#a9ccda] p-4 rounded-sm"></i>
+                    <i class="fa-solid fa-volume-high bg-[#a9ccda] p-4 rounded-sm"></i>
+                </div>
+            </div>
+        </section>
+        
 
-        <div id="level-container" class="flex  flex-row gap-3 pb-24">
-            <!-- <button class="btn btn-outline btn-primary">Lesson -1</button> -->
-        </div>
-    </section>
-    <section class="mx-20 flex flex-col">
-        <div class="flex flex-col justify-center items-center bg-[#F8F8F8] py-16 rounded-lg">
+        <div id="" class="flex flex-col justify-center text-center ">
             <p class="text-[#79716B] text-sm hind-siliguri-light pb-3">আপনি এখনো কোন Lesson Select করেন নি</p>
             <p class="hind-siliguri-light text-[#292524] font-medium text-4xl">একটি Lesson Select করুন।</p>
         </div>
