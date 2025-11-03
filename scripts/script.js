@@ -17,6 +17,5 @@ document.getElementById("get-started-btn").addEventListener("click",function (ev
         
     } else {
         alert("The password is not 1234");
-        
     }
 })
