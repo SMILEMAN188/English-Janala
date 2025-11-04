@@ -6,7 +6,7 @@ function loadAllLevels() {
 
 function displayLevels(data) {
     
-    console.log(data);
+    
     const levelContainer = document.getElementById("level-container");
     
     
@@ -20,9 +20,43 @@ function displayLevels(data) {
     }
 }
 
-function loadword(params) {
+function loadWords() {
+    fetch("https://openapi.programming-hero.com/api/level/5")
+    .then((res) => res.json())
+    .then((data) => displayWords(data.data))
+}
+
+function displayWords(data) {
     
+    const wordContainer = document.getElementById("word-container");
+
+    data.forEach(word => {
+        
+        const container = document.createElement("div");
+        
+        
+
+        container.innerHTML = `
+        
+        <div class="flex flex-col items-center justify-center bg-white rounded-lg p-10 ">
+            <p class="text-3xl font-bold pb-6">${word.word}</p>
+            <p class="font-medium text-xl pb-6">Meaning /Pronounciation</p>
+            <p class="text-[#18181B] text-3xl font-semibold whitespace-pre-line text-center">"${word.meaning} /${word.pronunciation}"</p>
+                                                                            
+            <section class=" flex flex-row items-center justify-between mt-15 w-full px-10">
+                <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 ">
+                    <i class="fa-solid fa-circle-info"></i>
+                </button>
+                <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 ">
+                    <i class="fa-solid fa-volume-high"></i>
+                </button>
+            </section>
+        </div>
+
+        `
+        wordContainer.append(container);
+    });
 }
 
 loadAllLevels();
-
+loadWords();
