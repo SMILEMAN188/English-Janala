@@ -44,14 +44,15 @@ function displayWords(data) {
             <p class="text-[#18181B] text-3xl font-semibold whitespace-pre-line text-center">"${word.meaning} /${word.pronunciation}"</p>
                                                                             
             <section class=" flex flex-row items-center justify-between mt-15 w-full px-10">
-                <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 ">
-                    <i class="fa-solid fa-circle-info"></i>
-                </button>
+                <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4" onclick="my_modal_1.showModal()"><i class="fa-solid fa-circle-info"></i></button>
                 <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 ">
                     <i class="fa-solid fa-volume-high"></i>
                 </button>
             </section>
         </div>
+
+        
+
 
         `
         wordContainer.append(container);
