@@ -2,7 +2,8 @@
     document.getElementById("vocabulary").style.display = "none";
     document.getElementById("FAQ").style.display = "none";
 
-document.getElementById("get-started-btn").addEventListener("click",function () {
+document.getElementById("get-started-btn").addEventListener("click",function (event) {
+    event.preventDefault();
     const pass = document.getElementById("password").value;
     if ( "1234" === pass ) {
         document.getElementById("nav").style.display = "block";
@@ -23,11 +24,11 @@ function logOut() {
         document.getElementById("FAQ").style.display = "none";
 
         
-        document.getElementById("Banner").style.display = "block";
+        document.getElementById("Banner").style.display = "flex";
 
 }
 
-logoOut();
+logOut();
 
 
 
