@@ -8,11 +8,16 @@ function displayLevels(data) {
     const levelContainer = document.getElementById("level-container");
     for (const level of data) {
         const Div = document.createElement("div");
+        
+        console.log(level);
+        
+        
         Div.innerHTML = `
-        <button onclick="loadCatagoryVideos(${data.level_no})" class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</button>
+        <button onclick="loadCatagoryVideos(${data.level})" class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</button>
         `
         levelContainer.append(Div);
     }
+    
 }
 
 function loadWords() {
@@ -22,8 +27,10 @@ function loadWords() {
 }
 
 function displayWords(data) {
+    
     const wordContainer = document.getElementById("word-container");
     data.forEach(word => {
+        
         const container = document.createElement("div");
         container.innerHTML = `
         <div class="flex flex-col items-center justify-center bg-white rounded-lg p-10 ">
@@ -48,11 +55,12 @@ function displayWords(data) {
 }
 
 const loadCatagoryVideos =(id)=>{
-        
+    const url = "https://openapi.programming-hero.com/api/levels/$(id)";
+    
 }
 
 
 
 
 loadAllLevels();
-loadWords();
+// loadWords();
