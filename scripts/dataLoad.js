@@ -10,7 +10,7 @@ function displayLevels(data) {
         
         const Div = document.createElement("div");
         Div.innerHTML = `
-        <button onclick="loadCatagoryWords(${level.level_no})" class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</button>
+        <button id="btn-${level.level_no}" onclick="loadCatagoryWords(${level.level_no})" class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</button>
         `
         levelContainer.append(Div);
     }
@@ -67,16 +67,28 @@ function displayWords(data) {
 }
 
 const loadCatagoryWords = (id) => {
-    
+    removeActiveClass();
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
     fetch(url)
     .then((res) => res.json())
-    .then((data) => displayWords(data.data));
+    .then((data) => {
+        const clickedButton = document.getElementById(`btn-${id}`);
+        console.log(`btn-${id}`);
+        
+        clickedButton.classList.add("active");
+        displayWords(data.data)
+    });
     
+}
+
+function removeActiveClass() {
+  const activeButtons = document.getElementsByClassName("active");
+  for (let btn of activeButtons) {
+    btn.classList.remove("active");
+  }
 }
 
 
 
 
 loadAllLevels();
-// loadWords();
