@@ -6,14 +6,11 @@ function loadAllLevels() {
 
 function displayLevels(data) {
     const levelContainer = document.getElementById("level-container");
-    for (const level of data) {
+    for (let level of data) {
+        
         const Div = document.createElement("div");
-        
-        console.log(level);
-        
-        
         Div.innerHTML = `
-        <button onclick="loadCatagoryVideos(${data.level})" class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</button>
+        <button onclick="loadCatagoryWords(${level.level_no})" class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</button>
         `
         levelContainer.append(Div);
     }
@@ -29,6 +26,7 @@ function loadWords() {
 function displayWords(data) {
     
     const wordContainer = document.getElementById("word-container");
+    wordContainer.innerHTML = "";
     data.forEach(word => {
         
         const container = document.createElement("div");
@@ -54,8 +52,12 @@ function displayWords(data) {
     });
 }
 
-const loadCatagoryVideos =(id)=>{
-    const url = "https://openapi.programming-hero.com/api/levels/$(id)";
+const loadCatagoryWords = (id) => {
+    
+    const url = `https://openapi.programming-hero.com/api/level/${id}`;
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => displayWords(data.data));
     
 }
 
