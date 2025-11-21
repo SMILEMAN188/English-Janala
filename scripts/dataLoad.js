@@ -27,6 +27,20 @@ function displayWords(data) {
     
     const wordContainer = document.getElementById("word-container");
     wordContainer.innerHTML = "";
+    if (data.length == 0) {
+        wordContainer.innerHTML = `
+        <div class="col-span-full flex flex-col items-center justify-center text-center gap-5 my-10">
+                <div>
+                    <img src="assets/alert-error.png" alt="">
+                </div>
+                <div>
+                    <p class="hind-siliguri-light font-normal text-xs pb-5">এই Lesson এ এখনো কোন Vocabulary যুক্ত করা হয়নি।</p>
+                    <p class="hind-siliguri-light font-medium text-4xl">নেক্সট Lesson এ যান</p>
+                </div>
+            </div>
+        `;
+        return;
+    }
     data.forEach(word => {
         
         const container = document.createElement("div");
