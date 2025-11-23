@@ -44,6 +44,7 @@ function displayWords(data) {
     data.forEach(word => {
         
         const container = document.createElement("div");
+
         container.innerHTML = `
         <div class="flex flex-col items-center justify-center bg-white rounded-lg p-10 ">
             <p class="text-3xl font-bold pb-6">${word.word}</p>
@@ -52,7 +53,7 @@ function displayWords(data) {
                                                                             
             <section class=" flex flex-row items-center justify-between mt-15 w-full px-10">
             
-                <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 " onclick="my_modal_1.showModal()">
+                <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 " onclick="loadWordDetails(${word.id})">
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
@@ -73,8 +74,6 @@ const loadCatagoryWords = (id) => {
     .then((res) => res.json())
     .then((data) => {
         const clickedButton = document.getElementById(`btn-${id}`);
-        console.log(`btn-${id}`);
-        
         clickedButton.classList.add("active");
         displayWords(data.data)
     });
@@ -88,7 +87,17 @@ function removeActiveClass() {
   }
 }
 
+const loadWordDetails = (id) => {
+    const url = `https://openapi.programming-hero.com/api/word/${id}`;
+    
+    fetch(url)
+    .then((res) => res.json())
+    .then((data) => console.log(data.data))
+};
 
-
+const displayWordDetails = (data) => {
+    console.log(data);
+    
+}
 
 loadAllLevels();
