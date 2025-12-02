@@ -36,7 +36,6 @@ function loadWords() {
 function displayWords(data) {
     
     const wordContainer = document.getElementById("word-container");
-    const modal = document.getElementById("my_modal_1");
     wordContainer.innerHTML = "";
     if (data.length == 0) {
         wordContainer.innerHTML = `
@@ -50,7 +49,9 @@ function displayWords(data) {
                 </div>
             </div>
         `;
+        hideLoader();
         return;
+        
     }
     data.forEach(word => {
         
@@ -75,14 +76,14 @@ function displayWords(data) {
         </div>
         `
         wordContainer.append(container);
-        
-    hideLoader();
+        hideLoader();
+    
     });
 }
 
 const loadCatagoryWords = (id) => {
-    showLoader();
     removeActiveClass();
+    showLoader();
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
     fetch(url)
     .then((res) => res.json())
