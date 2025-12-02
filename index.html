@@ -48,14 +48,26 @@
 
 </head>
 <body>
+    <dialog id="word_details" class="modal">
+        <div class="modal-box ">
+            <section id="details-container">
+            </section>
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn p-4 hind-siliguri-light rounded-lg font-medium text-xl bg-[#422AD5] text-[#FFFFFF]">Complete Learning</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
                                                                            <!-- Navbar -->
-    <nav id="nav" class="py-2   px-20 border-b mb-16  rounded-lg">
+    <nav id="nav" class="py-2 px-20 border-b mb-16  rounded-lg ">
         <section class="flex flex-row justify-between items-center">
             <div class="flex flex-row items-center">
-            <p class="font-semibold text-xl">English</p>
-            <img class="py-4" src="assets/logo.png" alt="">
-            <p class="tiro-bangla-regular text-xl">জানালা</p>
-        </div>
+                <p class="font-semibold text-xl">English</p>
+                <img class="py-4" src="assets/logo.png" alt="">
+                <p class="tiro-bangla-regular text-xl">জানালা</p>
+            </div>
 
         <div class="flex flex-row gap-4">
             <a href="#FAQ">
@@ -92,43 +104,48 @@
             </div>
         </section>
 
+        <section class="text-center hidden">
+            <span class="loading loading-dots loading-xl"></span>
+        </section>
+
         <section id="word-container" class="grid grid-cols-3 items-center justify-center mx-20 bg-[#F8F8F8] p-7 rounded-lg gap-6">
             <div class="col-span-full flex flex-col items-center justify-center text-center gap-5 my-10">
                 <p class="hind-siliguri-light font-normal text-sm">আপনি এখনো কোন Lesson Select করেন নি</p>
                 <p class="hind-siliguri-light font-normal text-3xl">একটি Lesson Select করুন।</p>
             </div>
+        </section>
     </section>
     
                                                                               <!-- FAQ -->
-    <section id="FAQ" class="flex flex-col justify-center items-center px-20 py-48 gap-3">
+    <section id="FAQ" class="flex flex-col justify-center items-center px-20 py-48">
         <div class="text-center">
             <p class="text-4xl font-bold text-[#18181B] pb-20"><span class="text-[#00BCFF]">Frequently</span> Asked Questions</p>
         </div>
-        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300 mb-2">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">1.How can I start learning English on this website?</div>
             <div class="collapse-content text-sm">You can start by exploring our beginner lessons, interactive exercises, and quizzes. We also offer structured courses to guide you step by step.</div>
         </div>
             
-        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300 mb-2">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">2.Is this website free to use?</div>
             <div class="collapse-content text-sm">Yeap! This website is totally free for learning.</div>
         </div>
             
-        <div class="collapse collapse-plus bg-base-100  shadow-sm border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm border border-base-300 mb-2">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">3.Do I need to create an account?</div>
             <div class="collapse-content text-sm">Yes.You need to create an account ,when you are login first time.</div>
         </div>
 
-        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300 mb-2">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">4. How can I build my English vocabulary?</div>
             <div class="collapse-content text-sm">You should learn and explore new words daily.</div>
         </div>
 
-        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300">
+        <div class="collapse collapse-plus bg-base-100  shadow-sm  border border-base-300 mb-2">
             <input type="radio" name="my-accordion-3" checked="checked" />
             <div class="collapse-title font-semibold">5. Do you offer certificates for completed courses?</div>
             <div class="collapse-content text-sm">Right now we cannot provide that, but infuture we can offer certificates after complete the courses.</div>
@@ -157,25 +174,7 @@
             </div>
         </div>
     </footer>
-<<<<<<< HEAD
-
-    <dialog id="word_details" class="modal">
-        <div class="modal-box ">
-            <section id="details-container">
-            </section>
-
-            <div class="modal-action">
-                <form method="dialog">
-                    <button class="btn p-4 hind-siliguri-light rounded-lg font-medium text-xl bg-[#422AD5] text-[#FFFFFF]">Complete Learning</button>
-                </form>
-            </div>
-        </div>
-    </dialog>
-    
-   <!-- <script src="scripts/script.js"></script> -->
-=======
    <script src="scripts/script.js"></script>
->>>>>>> 0ddf0e6f13a9f428ffcdaf30af11f5c61efc8a7a
    <script src="scripts/dataLoad.js"></script>
 </body>
 </html> 

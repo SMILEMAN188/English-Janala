@@ -1,3 +1,13 @@
+const showLoader = () => {
+    document.getElementById("loader").classList.remove("hidden");
+    document.getElementById("word-container").classList.add("hidden");
+}
+
+const hideLoader = () => {
+    document.getElementById("loader").classList.add("hidden");
+    document.getElementById("word-container").classList.remove("hidden");
+}
+
 function loadAllLevels() {
     fetch("https://openapi.programming-hero.com/api/levels/all")
     .then((res) => res.json())
@@ -10,7 +20,7 @@ function displayLevels(data) {
         
         const Div = document.createElement("div");
         Div.innerHTML = `
-        <button id="btn-${level.level_no}" onclick="loadCatagoryWords(${level.level_no})" class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Lesson - ${level.level_no}</button>
+        <button id="btn-${level.level_no}" onclick="loadCatagoryWords(${level.level_no})" class="btn btn-outline btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-lg"> <i class="fa-solid fa-book-open"></i> <span>Lesson -</span>${level.level_no}</button>
         `
         levelContainer.append(Div);
     }
@@ -65,10 +75,13 @@ function displayWords(data) {
         </div>
         `
         wordContainer.append(container);
+        
+    hideLoader();
     });
 }
 
 const loadCatagoryWords = (id) => {
+    showLoader();
     removeActiveClass();
     const url = `https://openapi.programming-hero.com/api/level/${id}`;
     fetch(url)
@@ -78,7 +91,7 @@ const loadCatagoryWords = (id) => {
         clickedButton.classList.add("active");
         displayWords(data.data)
     });
-    
+
 }
 
 function removeActiveClass() {
@@ -120,7 +133,6 @@ const displayWordDetails = (data) => {
   const synonymBox = document.getElementById("synonym");
 
   data.synonyms.forEach( synonyms => {
-        console.log(synonyms);
         
         const container = document.createElement("div");
 
@@ -131,7 +143,6 @@ const displayWordDetails = (data) => {
     });
     
 };
-
 
 loadAllLevels();
 
