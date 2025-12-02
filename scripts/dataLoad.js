@@ -26,6 +26,7 @@ function loadWords() {
 function displayWords(data) {
     
     const wordContainer = document.getElementById("word-container");
+    const modal = document.getElementById("my_modal_1");
     wordContainer.innerHTML = "";
     if (data.length == 0) {
         wordContainer.innerHTML = `
@@ -53,7 +54,7 @@ function displayWords(data) {
                                                                             
             <section class=" flex flex-row items-center justify-between mt-15 w-full px-10">
             
-                <button class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 " onclick="loadWordDetails(${word.id})">
+                <button onclick="loadWordDetails('${word.id}')" class="btn bg-[#1a91ff1a] shadow-md hover:bg-white p-4 ">
                     <i class="fa-solid fa-circle-info"></i>
                 </button>
 
@@ -92,12 +93,45 @@ const loadWordDetails = (id) => {
     
     fetch(url)
     .then((res) => res.json())
-    .then((data) => console.log(data.data))
+    .then((data) => { displayWordDetails(data.data);
+
+    });
 };
 
+
 const displayWordDetails = (data) => {
-    console.log(data);
+  document.getElementById("word_details").showModal();
+  const detailsContainer = document.getElementById("details-container");
+
+  detailsContainer.innerHTML = `
+
+    <div class="p-6 pr-20 rounded-lg border border-[#5387c2] inset-shadow-sm">
+        <p class="font-semibold text-4xl pb-8 whitespace-nowrap">${data.word} (<i class="fa-solid fa-microphone-lines"></i>:${data.pronunciation})</p>
+        <p class="font-semibold text-2xl pb-2.5">Meaning</p>
+        <p class="hind-siliguri-light font-medium text-2xl pb-8">${data.meaning}</p>
+        <p class="font-semibold text-2xl pb-2">Example</p>
+        <p class="font-normal text-2xl pb-8 ">${data.sentence}</p>
+        <p class="hind-siliguri-light font-medium text-2xl pb-4">সমার্থক শব্দ গুলো</p>
+        <div id="synonym" class="flex flex-row gap-2"></div>
+    </div>
+
+  `;
+
+  const synonymBox = document.getElementById("synonym");
+
+  data.synonyms.forEach( synonyms => {
+        console.log(synonyms);
+        
+        const container = document.createElement("div");
+
+        container.innerHTML = `
+        <p class="px-5 py-1.5 bg-[#D7E4EF] text-xl rounded-lg whitespace-pre-line">${synonyms}</p>
+        `
+        synonymBox.appendChild(container);    
+    });
     
-}
+};
+
 
 loadAllLevels();
+

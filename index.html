@@ -59,17 +59,17 @@
 
         <div class="flex flex-row gap-4">
             <a href="#FAQ">
-                <button class="btn btn-outline btn-primary"> <i class="fa-regular fa-circle-question"></i> FAQ</button>
+                <button class="btn btn-outline btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-lg"> <i class="fa-regular fa-circle-question"></i> FAQ</button>
             </a>
             <a href="#vocabulary">
-                <button class="btn btn-outline btn-primary"> <i class="fa-solid fa-book-open"></i> Learn</button>
+                <button class="btn btn-outline btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-lg"> <i class="fa-solid fa-book-open"></i> Learn</button>
             </a>
-            <button onclick="logOut()" class="btn btn-outline btn-primary"> <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
+            <button onclick="logOut()" class="btn btn-outline btn-primary btn-xs sm:btn-sm md:btn-md lg:btn-lg xl:btn-lg"> <i class="fa-solid fa-arrow-right-from-bracket"></i>Logout</button>
         </div>
         </section>
     </nav>
                                                                       <!-- Banner and login -->
-    <section id="Banner" class="flex flex-row justify-center items-center px-24 mb-24 ">
+    <section id="Banner" class="flex justify-center items-center px-24 mb-24 sm:flex-col md:flex-col lg:flex-row xl:flex-row">
         <div class="flex flex-col gap-6">
             <p class="font-bold text-4xl"><span class="text-[#00BCFF]">English</span> is Easy!!</p>
             <p class="font-medium text-2xl text-[#18181B] hind-siliguri-light whitespace-pre-line">আজ থেকেই আপনার ভাষা শেখার যাত্রা শুরু করুন। আপনি যদি নতুন হন অথবা আপনার দক্ষতা <br>বাড়াতে চান, আমাদের Interactive Lessons আপনাকে নিয়ে <br>যাবে অন্য একটি Level এ</p>
@@ -97,26 +97,6 @@
                 <p class="hind-siliguri-light font-normal text-sm">আপনি এখনো কোন Lesson Select করেন নি</p>
                 <p class="hind-siliguri-light font-normal text-3xl">একটি Lesson Select করুন।</p>
             </div>
-            
-                                                          <!-- modal -->
-            <!-- <dialog id="my_modal_1" class="modal">
-                <div class="modal-box ">
-                    <section class="p-6 gap-6 rounded-lg border border-[#EDF7FF] inset-shadow-sm">
-                        <p class="font-semibold text-4xl">${word.word} (<i class="fa-solid fa-microphone-lines"></i>:${word.pronunciation})</p>
-                        <p class="font-semibold text-2xl">Meaning</p>
-                        <p class="hind-siliguri-light font-medium text-2xl"></p>
-                        <p class="font-semibold text-2xl">Example</p>
-                        <p class="font-normal text-2xl"></p>
-                        <p class="hind-siliguri-light font-medium text-2xl">সমার্থক শব্দ গুলো</p>
-                    </section>
-                    <div class="modal-action">
-                        <form method="dialog">
-                            <button class="btn p-4 hind-siliguri-light rounded-lg font-medium text-xl bg-[#422AD5] text-[#FFFFFF]">Complete Learning</button>
-                        </form>
-                    </div>
-                </div>
-            </dialog> -->
-        </section>
     </section>
     
                                                                               <!-- FAQ -->
@@ -177,6 +157,20 @@
             </div>
         </div>
     </footer>
+
+    <dialog id="word_details" class="modal">
+        <div class="modal-box ">
+            <section id="details-container">
+            </section>
+
+            <div class="modal-action">
+                <form method="dialog">
+                    <button class="btn p-4 hind-siliguri-light rounded-lg font-medium text-xl bg-[#422AD5] text-[#FFFFFF]">Complete Learning</button>
+                </form>
+            </div>
+        </div>
+    </dialog>
+    
    <!-- <script src="scripts/script.js"></script> -->
    <script src="scripts/dataLoad.js"></script>
 </body>
